@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MWF Reports</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f3ef;
+    }
+
+    /* Navigation bar */
+    .navbar {
+      background-color: #6d4c41;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: white;
+    }
+
+    .navbar h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* Report Section */
+    .container {
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+
+    h3 {
+      color: #5d4037;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #6d4c41;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f2f2f2;
+    }
+
+    .filter {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    input[type="date"] {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 0 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #5d4037;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3e2723;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <h2>MWF Reports</h2>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="sales.html">Sales</a>
+      <a href="stock.html">Stock</a>
+      <a href="reports.html">Reports</a>
+      <a href="login.html">Logout</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h3>Sales Report</h3>
+
+    <div class="filter">
+      <label>From:</label>
+      <input type="date">
+      <label>To:</label>
+      <input type="date">
+      <button>Filter</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Customer</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Total (UGX)</th>
+          <th>Payment</th>
+          <th>Sales Agent</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2025-07-27</td>
+          <td>Jane K</td>
+          <td>Sofa Set</td>
+          <td>2</td>
+          <td>900,000</td>
+          <td>Cash</td>
+          <td>Alex</td>
+        </tr>
+        <tr>
+          <td>2025-07-26</td>
+          <td>Kamya Ltd</td>
+          <td>Timber</td>
+          <td>30</td>
+          <td>1,200,000</td>
+          <td>Cheque</td>
+          <td>Rita</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

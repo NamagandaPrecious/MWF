@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Record sale</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3ede7;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #5d4037;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      margin: 20px auto;
+      width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    input[type="checkbox"] {
+      margin-top: 15px;
+    }
+
+    button {
+      margin-top: 15px;
+      background-color: #6d4c41;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #5d4037;
+    }
+
+    .receipt {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #fff;
+      width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none;
+    }
+
+    .receipt h3 {
+      color: #5d4037;
+      text-align: center;
+    }
+
+    .receipt p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sales Entry</h1>
+
+  <div class="form-container">
+    <form id="salesForm">
+      <label for="customer">Customer Name:</label>
+      <input type="text" id="customer" required>
+
+      <label for="product">Product Name:</label>
+      <input type="text" id="product" required>
+
+      <label for="type">Product Type:</label>
+      <input type="text" id="type" required>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" required>
+
+      <label for="price">Price Per Item (UGX):</label>
+      <input type="number" id="price" required>
+
+      <label for="payment">Payment Method:</label>
+      <input type="text" id="payment" placeholder="cash, cheque, overdraft" required>
+
+      <label for="agent">Sales Agent Name:</label>
+      <input type="text" id="agent" required>
+
+      <input type="checkbox" id="transport"> Add 5% Transport Fee
+
+      <button type="submit">Submit Sale</button>
+    </form>
+  </div>
+
+  <div class="receipt" id="receiptBox">
+    <h3>Sales Receipt</h3>
+    <p id="receiptDetails"></p>
+  </div>
+
+  <script>
+    const form = document.getElementById('salesForm');
+    const receiptBox = document.getElementById('receiptBox');
+    const receiptDetails = document.getElementById('receiptDetails');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const customer = document.getElementById('customer').value;
+      const product = document.getElementById('product').value;
+      const type = document.getElementById('type').value;
+      const quantity = parseInt(document.getElementById('quantity').value);
+      const price = parseFloat(document.getElementById('price').value);
+      const payment = document.getElementById('payment').value;
+      const agent = document.getElementById('agent').value;
+      const transportChecked = document.getElementById('transport').checked;
+
+      let total = price * quantity;
+      if (transportChecked) {
+        total *= 1.05; // Add 5%
+      }
+
+      receiptDetails.innerHTML = `
+        <strong>Customer:</strong> ${customer}<br>
+        <strong>Product:</strong> ${product} (${type})<br>
+        <strong>Quantity:</strong> ${quantity}<br>
+        <strong>Price per Item:</strong> UGX ${price}<br>
+        <strong>Payment Method:</strong> ${payment}<br>
+        <strong>Sales Agent:</strong> ${agent}<br>
+        <strong>Transport Fee Applied:</strong> ${transportChecked ? "Yes (5%)" : "No"}<br>
+        <strong>Total Amount:</strong> <span style="color: green;">UGX ${total.toFixed(0)}</span><br>
+        <em>Date:</em> ${new Date().toLocaleString()}
+      `;
+
+      receiptBox.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>

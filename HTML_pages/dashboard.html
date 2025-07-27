@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MWF Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f3f2ef;
+    }
+
+    .header {
+      background-color: #6d4c41;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .card {
+      background-color: white;
+      width: 250px;
+      padding: 20px;
+      margin: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .card h3 {
+      color: #5d4037;
+    }
+
+    .card p {
+      font-size: 24px;
+      margin-top: 10px;
+      color: #3e2723;
+    }
+
+    .nav {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      margin: 0 10px;
+      color: #6d4c41;
+      font-weight: bold;
+    }
+
+    .nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>MWF System Dashboard</h1>
+    <p>Welcome, Manager</p>
+  </div>
+
+  <div class="nav">
+    <a href="stock.html">Manage Stock</a>
+    <a href="sales.html">Record Sale</a>
+    <a href="reports.html">View Reports</a>
+    <a href="login.html">Logout</a>
+  </div>
+
+  <div class="container">
+    <div class="card">
+      <h3>Today's Sales</h3>
+      <p>UGX 1,200,000</p>
+    </div>
+
+    <div class="card">
+      <h3>Total Stock Items</h3>
+      <p>320</p>
+    </div>
+
+    <div class="card">
+      <h3>Pending Deliveries</h3>
+      <p>6 Orders</p>
+    </div>
+
+    <div class="card">
+      <h3>Low Stock Alerts</h3>
+      <p>4 Products</p>
+    </div>
+  </div>
+
+</body>
+</html>
