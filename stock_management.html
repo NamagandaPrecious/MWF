@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Stock</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f4f0;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #5d4037;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 20px;
+      margin: 20px auto;
+      width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input[type="text"], input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 15px;
+      background-color: #6d4c41;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #5d4037;
+    }
+
+    table {
+      width: 90%;
+      margin: 30px auto;
+      border-collapse: collapse;
+      background-color: white;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #6d4c41;
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Stock Management</h1>
+
+  <div class="form-container">
+    <form>
+      <label for="productName">Product Name:</label>
+      <input type="text" id="productName" required>
+
+      <label for="productType">Product Type:</label>
+      <input type="text" id="productType" required>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" required>
+
+      <label for="costPrice">Cost Price (UGX):</label>
+      <input type="number" id="costPrice" required>
+
+      <label for="supplier">Supplier Name:</label>
+      <input type="text" id="supplier" required>
+
+      <button type="submit">Add New Product</button>
+    </form>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Type</th>
+        <th>Quantity</th>
+        <th>Cost Price</th>
+        <th>Supplier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Sofa Set</td>
+        <td>Furniture</td>
+        <td>5</td>
+        <td>450000</td>
+        <td>Jinja Woods</td>
+      </tr>
+      <tr>
+        <td>Timber</td>
+        <td>Wood</td>
+        <td>20</td>
+        <td>10000</td>
+        <td>Masaka Timber Ltd</td>
+      </tr>
+      <!-- You can add more rows dynamically later -->
+    </tbody>
+  </table>
+
+</body>
+</html>
